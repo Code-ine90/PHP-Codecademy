@@ -83,4 +83,22 @@
 
     echo increaseEnthusiasm(repeatThreeTimes("Hi")); // This should return the same value as above "HiHiHi!", but without having to assign the return from repeatThreeTimes() function to a variable first. You can place functions as arguments in other functions, so their return values are used as the argument.
 
+    # A function can have multiple parameters. However if you pass in less arguments than the function expects, it will return an error I.E. multiParam($p1, $p2, $p3) called as multiParam(1, 2) will return an error as it is expecting 3 arguments to be passed to it.
+
+    function calculateArea($num1, $num2) 
+    {
+    return $num1 * $num2;
+    }
+
+    echo calculateArea(5, 10) . "\n";
+
+    function calculateVolume($num1, $num2, $num3) 
+    {
+    return $num1 * $num2 * $num3;
+    }
+
+    echo calculateVolume(5, 10, 4) . "\n";
+
+    echo "The total volume of concrete to be ordered for pad 2 is: " . calculateVolume(4.2, 16, .15)  . " cubic meters";
+
 ?>
