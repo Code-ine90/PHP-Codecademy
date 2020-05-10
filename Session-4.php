@@ -43,5 +43,19 @@
     echo str_repeat("\nThere's no place like home.\n", 3); // Prints "\nThere's no place like home.\n\nPrints There's no place like home.\n\nPrints There's no place like home.\n"
 
     # Substrings - 
+    # A substring is a portion of a string. For example "hello" is a substring of "Oh hello, how are you?". "el" is substring of "hello".
 
     # The function substr_count() can be used to return the number of instances of a substring within a string. 
+
+    # The substr_count() function takes two arguments, the string to be searched through, and the string to search for. The string being searched throuh is sometimes called a haystack, and the string being searched for is sometimes called a needle.
+
+    $essay_one = "I really enjoyed the book. I thought the characters were really interesting. The plot of the novel was really engaging. I really felt the characters' emotions. They were really well-written. I really wish the ending had been different though.";
+  
+    $essay_two = "Obviously this is a really good book. You obviously would not have made us read it if it wasn't. I felt like the ending was too obvious though. It was so obvious who did it right away. I think the thing with the light was obviously a metaphor for life. It would have been better if the characters were less obvious about their secrets."; 
+
+    echo substr_count($essay_one, "really") . "\n"; // Prints 6, as there are 6 counts of the word really in the string held by $essay_one
+    echo substr_count($essay_two, "obvious") . "\n"; // Prints 5. The substr_count() function is not concerned by what characters come before or after the needle, it will count both "obvious" and "obviously" in it's count.
+
+    
+
+
