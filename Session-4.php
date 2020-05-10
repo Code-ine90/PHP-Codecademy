@@ -42,6 +42,6 @@
 
     echo str_repeat("\nThere's no place like home.\n", 3); // Prints "\nThere's no place like home.\n\nPrints There's no place like home.\n\nPrints There's no place like home.\n"
 
-    
+    # Substrings - 
 
-?>
+    # The function substr_count() can be used to return the number of instances of a substring within a string. 
