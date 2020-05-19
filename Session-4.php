@@ -109,7 +109,36 @@
 
     echo rand(52, 1); // Will print a random number, that is between 1 and 52
 
-    
+    # PHP has many inbuilt functions, and the easiest way to find them is to often use Google. Here are a few examples.
+
+    function convertToShout($str) 
+    {
+        $str = strtoupper($str) . "!";
+        return $str;
+    }
+
+    echo  convertToShout("woah there, buddy");
+
+    echo "\n";
+
+    function tipGenerously($mealCost)
+    {
+        $mealCost = $mealCost + (($mealCost / 100) * 20);
+        return ceil($mealCost);
+    }
+
+    echo tipGenerously(982.27);
+    echo "\n";
+
+    function calculateCircleArea($dia)
+    {
+        $area = pi() * (($dia / 2) ** 2);
+        return $area;
+    }
+
+    echo calculateCircleArea(25);
+
+
 
     
 
