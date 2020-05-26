@@ -79,3 +79,32 @@ $php_short = [
 
 print_r($php_short); // Prints the same as $php_array.
   
+# As with ordered arrays, using echo to print them only prints "array".
+
+# The implode() function can be used to combine the values into a single string, which can be printed with echo.
+
+# However the implode() function only combines the values into a string, and we can't see the keys in the array or the relationship between them.
+
+# We can display all of the information by using the print_r() function however.
+
+$september_hits = [
+    "The Sixth Sense" => 22896967,
+    "Stigmata" => 18309666,
+    "Blue Streak" => 19208806,
+    "Double Jeopardy" => 23162542
+  ];
+  
+  echo implode(", ", $september_hits); // Prints: 22896967, 18309666, 19208806, 23162542 
+  echo "\n";
+  
+  print_r($september_hits); /* Prints: 
+  Array
+  (
+      [The Sixth Sense] => 22896967
+      [Stigmata] => 18309666
+      [Blue Streak] => 19208806
+      [Double Jeopardy] => 23162542
+  )
+  */
+
+  
