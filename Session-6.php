@@ -213,3 +213,59 @@ $my_car = [
   )
   */
 
+# Associative arrays can use integers as keys as well as strings.
+
+# With ordered arrays in PHP the numerical key association to values is done automaticalls for us.
+
+# The structure of an ordered array is the same as an associative array.
+
+# When we add an element to an array without a specific key, such as using array_push(), PHP will associate it with the next integer key.
+
+# If no integer keys have been used it will associate it with the key 0.
+
+# If integer keys have been previously used, then it will assign it the key one larger than the largest integer used so far.
+
+# This behaviour is the same whether using ordered array or associative ones.
+
+$hybrid_array = [
+    "value one",
+    "second value",
+    "third value",
+    "fourth value",
+    8 => "five more"
+  ];
+  
+  print_r($hybrid_array); /* Prints:
+  Array
+  (
+      [0] => value one
+      [1] => second value
+      [2] => third value
+      [3] => fourth value
+      [8] => five more
+  )
+  */
+  
+  array_push($hybrid_array, rand()); // Should push a random number into the next integer key, which is 9.
+  
+  print_r($hybrid_array); /* Prints: 
+  Array
+  (
+      [0] => value one
+      [1] => second value
+      [2] => third value
+      [3] => fourth value
+      [8] => five more
+      [9] => 185246711
+  )
+  
+  Where [9] is a random number. 
+  */
+  
+  echo $hybrid_array[9]; // Prints the random number at index [9].
+  
+  # So, you can see because we used an integer as a key in our array [8], when we pushed a new element into the array, it picked up the indexing at [9].
+
+
+
+  
