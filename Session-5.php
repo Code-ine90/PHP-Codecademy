@@ -227,5 +227,52 @@ Array
 )
 */
 
+# We can use arrays to hold elements of any type.... Even more arrays!
+
+$treasure_hunt = ["garbage", "cat", 99, ["soda can", 8, ":)", "sludge", ["stuff", "lint", ["GOLD!"], "cave", "bat", "scorpion"], "rock"], "glitter", "moonlight", 2.11];
+
+print_r($treasure_hunt); /* Prints: 
+Array
+(
+    [0] => garbage
+    [1] => cat
+    [2] => 99
+    [3] => Array
+        (
+            [0] => soda can
+            [1] => 8
+            [2] => :)
+            [3] => sludge
+            [4] => Array
+                (
+                    [0] => stuff
+                    [1] => lint
+                    [2] => Array
+                        (
+                            [0] => GOLD!
+                        )
+
+                    [3] => cave
+                    [4] => bat
+                    [5] => scorpion
+                )
+
+            [5] => rock
+        )
+
+    [4] => glitter
+    [5] => moonlight
+    [6] => 2.11
+)
+*/
+
+# We can use chained operations to access and change elements within a nested array.
+
+# To find the gold in our $treasure_hunt, we will have to do some digging.
+
+echo $treasure_hunt[3][4][2][0]; // Prints: GOLD!
+
+// We succesfully dug our way down through the nested arrays and found the gold.
+
 
 
