@@ -10,7 +10,7 @@
 
 # It  was too inefficient to keep track of all these memory locations, so the computer only stored the memory adress of the first element.
 
-# It could then refer to other elements in the array, but how far along it was from the memory adress of the first element.
+# It could then refer to other elements in the array, by how far along it was from the memory adress of the first element.
 
  # The first element was 0 spots away from this memory adress, so it was 0th index. The second was 1 spot away, so was 1st index, and so on.
 
@@ -87,4 +87,78 @@ echo "\n";
 
 echo implode(", ", $favorite_nums); // Prints "7, 201, 33, 88, 91"
 echo "\n";
+
+$round_one = ["X", "X", "first winner"];
+
+$round_two = ["second winner", "X", "X", "X"];
+
+$round_three = ["X", "X", "X", "X", "third winner"];
+
+# You are also able to access elements within an array by using the array variables name and the location index surrounded by square brackets [].
+
+$winners = [$round_one[2], $round_two[0], $round_three[4]];
+
+echo implode(", ", $winners); // Prints "first winner, second winner, third winner"
+
+# We can also make adjustments to existing arrays.
+
+$change_me = [3, 6, 9];
+
+# To add an element to the end of an array, we use the variablename with brackets on the end ($array_variable[]), followed by the assignment operators (=), and then the element we want to add.
+
+$change_me[] = "A string element"; // Add's the string "A string element" to the end of the array. 
+echo implode(", ", $change_me);
+echo "\n";
+
+$change_me[] = 12; // Appends 12 to the array.
+echo implode(", ", $change_me);
+echo "\n";
+
+# We can also reassign an individual element within an array. 
+
+$change_me[1] = "tadpole"; // This will change the element at 1st index to be "tadpole", where it was 6 before.
+echo implode(", ", $change_me);
+echo "\n";
+
+print_r($change_me);
+
+# We can also add multiple elements to the array at a time using the array_push() function and we can remove array elements with the array_pop() function.
+
+$stack = ["wild success", "failure", "struggle"];
+
+# The array_push() function takes an array as it's first argument. Any arguments that follow after that are elements to be added to the end of the array.
+
+# array_push() adds the new elements to the array and returns the new number of elements in the array.
+
+$stack_num = array_push($stack, "blocker", "impediment"); // Adds "blocker" and "impediment" to the end of $stack. It then counts the number of elements in the array and returns the number to be assigned to $stack_num.
+echo $stack_num; // Prints: 5
+echo "\n";
+
+# The array_pop() function takes an array as it's argument. It will remove last element from the array and return the removed element.
+
+$stack_popped = array_pop($stack); // Removes the last element from the $stack array, and assigned the removed element to $stack_popped.
+echo $stack_popped; // Prints: impediment
+echo "\n";
+print_r($stack); /* Prints:
+Array
+(
+    [0] => wild success
+    [1] => failure
+    [2] => struggle
+    [3] => blocker
+)
+*/
+echo "\n";
+
+$stack_popped = array_pop($stack); // Removes and assigns the last element again.
+echo $stack_popped; // Prints: blocker
+echo "\n";
+array_pop($stack); // Removes the element, but we are not assigning the returned value to a variable.
+array_pop($stack);
+echo print_r($stack); /* Prints:
+Array
+(
+    [0] => wild success
+)
+*/
 
