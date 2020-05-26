@@ -107,4 +107,77 @@ $september_hits = [
   )
   */
 
-  
+$assignment_one = [
+    "Alex"=> 87,
+    "Kenny"=> 91,
+    "Natalia"=> 91,
+    "Lily"=> 67,
+    "Dan"=> 81,
+    "Kat"=> 77,
+    "Sara" => 65
+    ];
+
+$assignment_two = [
+    "Alex"=> 91, 
+    "Kenny"=> 99, 
+    "Natalia"=> 100, 
+    "Lily"=> 61, 
+    "Dan"=> 88, 
+    "Kat"=> 90
+    ];
+
+$assignment_three = [
+    "Alex"=> 78, 
+    "Kenny"=> 92, 
+    "Natalia"=> 94, 
+    "Lily"=> 79, 
+    "Dan"=> 73, 
+    "Sara" => 61
+    ];
+
+$student_name = "Alex";
+
+# We can access the value a given key points to by using the square brackets ([]).
+
+# We can also add a new element to an associative array using the assignment operator (=).
+
+# The computer treats all code between square brackets as an expression.
+
+# the code will be evaluated before the array is accessed, allowing us to use variables, functions and operators within the square brackets.
+
+$assignment_two["Sara"] = 65; // Appends the key "Sara" with the value of 65 to the end of $assignment_two.
+$assignment_three["Kat"] = 97; // Appends the key "Kat" with the value of 97 to the end of $assignment_three.
+
+print_r($assignment_two); /* Prints:
+Array
+(
+    [Alex] => 91
+    [Kenny] => 99
+    [Natalia] => 100
+    [Lily] => 61
+    [Dan] => 88
+    [Kat] => 90
+    [Sara] => 65
+)
+
+Sara's new score has been appended successfully to the end of the array.
+*/
+
+$dans_grades = [
+    $assignment_one["Dan"],
+    $assignment_two["Dan"],
+    $assignment_three["Dan"]
+]; // Creates a new ordered array with Dan's scores as the values attached to the indices.
+print_r($dans_grades); /* Prints:
+Array
+(
+    [0] => 81
+    [1] => 88
+    [2] => 73
+)
+*/
+
+echo $assignment_two[$student_name]; // Prints: 91. This is because "Alex" is assigned to $student_name, so we are looking for the value held by the key "Alex" in the $assignment_two array.
+
+
+
