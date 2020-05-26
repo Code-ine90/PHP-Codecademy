@@ -162,3 +162,70 @@ Array
 )
 */
 
+/*
+Let’s use arrays (and our imaginations) to go on a journey through the history of the 100-meter dash.
+
+In 1991 Carl Lewis broke the record of 9.90 seconds. His record was topped in 1994 by Leroy Burrell. Next in 1996, Donovan Bailey took the record only to have his record usurped by Maurice Greene in 1999, then Tim Montgomery in 2002.
+
+We’ve provided an array $record_holders. Use the array_unshift() function to add "Carl Lewis", "Leroy Burrell", "Donovan Bailey", "Maurice Greene", and "Tim Montgomery" to the $record_holders.
+
+Add the names so that older records always have higher index locations than more recent records.
+*/
+$record_holders = [];
+array_unshift($record_holders, "Tim Montgomery", "Maurice Greene", "Donovan Bailey", "Leroy Burrell", "Carl Lewis");
+print_r($record_holders); /* Prints:
+Array
+(
+    [0] => Tim Montgomery
+    [1] => Maurice Greene
+    [2] => Donovan Bailey
+    [3] => Leroy Burrell
+    [4] => Carl Lewis
+)
+*/
+
+# Tim Montgomery’s record was invalidated. Use the array_shift() function to remove him from the $record_holders array.
+
+$removed = array_shift($record_holders);
+echo $removed; // Prints: Tim Montgomery
+echo "\n";
+
+# Next up we have "Asafa Powell" in 2005 followed by "Justin Gatlin" in 2006. Use the array_unshift() function to add them to the $record_holders array.
+
+array_unshift($record_holders, "Justin Gatlin", "Asafa Powell");
+print_r($record_holders); /* Prints:
+Array
+(
+    [0] => Justin Gatlin
+    [1] => Asafa Powell
+    [2] => Maurice Greene
+    [3] => Donovan Bailey
+    [4] => Leroy Burrell
+    [5] => Carl Lewis
+)
+*/
+
+# Justin Gatlin’s record was also invalidated. Use the array_shift() function to remove him from the $record_holders array.
+
+$removed = array_shift($record_holders);
+echo $removed; // Prints: Justing Gatlin
+echo "\n";
+
+# Last but not least, use array_unshift() function to add "Usain Bolt" to the $record_holders array.
+
+array_unshift($record_holders, "Usain Bolt");
+$print_record = print_r($record_holders, true); // This is just a way of returning the array instead of printing it, which can then be assigned to a variable
+echo $print_record; /* Prints:
+Array
+(
+    [0] => Usain Bolt
+    [1] => Asafa Powell
+    [2] => Maurice Greene
+    [3] => Donovan Bailey
+    [4] => Leroy Burrell
+    [5] => Carl Lewis
+)
+*/
+
+
+
