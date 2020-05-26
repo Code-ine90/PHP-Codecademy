@@ -179,5 +179,37 @@ Array
 
 echo $assignment_two[$student_name]; // Prints: 91. This is because "Alex" is assigned to $student_name, so we are looking for the value held by the key "Alex" in the $assignment_two array.
 
-
+$my_car = [
+    "oil" => "black and clumpy",
+    "brakes" => "new",
+    "tires" => "old with worn treads",
+    "filth" => "bird droppings", 
+    "wiper fluid" => "full", 
+    "headlights" => "bright"
+  ];
+  print_r($my_car);
+  
+  # We can use the same syntax for changing array elements as we use for adding array elements
+  
+  # Because PHP allows us to add a new key=>value pair or change an exzisting one with the same syntax, we will need to be careful to avoid accidentally overwriting an existing value.
+  
+  $my_car["oil"] = "new and premium"; // Changes the value for "oil" from "black and clumpy" to "new and premium".
+  $my_car["tires"] = "new with deep treads"; // Changes the value for the key "tireds".
+  
+  # Using the unset() function we can remove a key=>value pair entirely from an array. If the key doesn't exist in the array, then nothing will happen.
+  
+  unset($my_car["filth"]); // Removes the "filth" key and associated "bird droppings" value from the array.
+  
+  
+  print_r($my_car); /* Prints:
+  
+  Array
+  (
+      [oil] => new and premium
+      [brakes] => new
+      [tires] => new with deep treads
+      [wiper fluid] => full
+      [headlights] => bright
+  )
+  */
 
