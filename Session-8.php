@@ -70,5 +70,25 @@
     <input type="submit" value="Submit POST">
     </form>
     <a href="Session-8.php">Reset</a>
+
+    <form method="get"> <!-- sets the form method to "get", so that the form entries are passed as parameters in a URL query string. -->
+    Country:
+    <input type="text" name="country"> <!-- The name for this input is set to "country" -->
+    <br>
+    Language:
+    <input type="text" name="language"> <!-- The name for this input is set to "language" -->
+    <br>
+    <input type="submit" value="Submit">
+    </form>
+    <br>
+    <?=print_r($_GET);?> <!-- In this case the array in $_GET is:
+    Array (
+        [country] => UK
+        [language] => English
+    )
+    -->
+    <p>Your language is: <?=$_GET["language"];?></p> <!-- Takes the value from the [language] key stored in the $_GET array, and outputs it into the page -->
+    <p>Your country is: <?=$_GET["country"];?></p> <!-- Takes the value from the [country] key stored in the $_GET array, and outputs it into the page -->
+    <a href="index.php">Reset</a>
 </body>
 </html>
