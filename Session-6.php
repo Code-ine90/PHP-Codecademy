@@ -266,6 +266,57 @@ $hybrid_array = [
   
   # So, you can see because we used an integer as a key in our array [8], when we pushed a new element into the array, it picked up the indexing at [9].
 
+# Joining Arrays
+
+# Using the union (+) operator, we can take two arrays and return a new array with unique keys from the second array appended to the first array.
+
+$giraffe_foods = [
+    "dip"=>"guacamole", 
+    "chips"=>"corn", 
+    "entree"=>"grilled chicken"
+    ];
+
+$impala_foods = [
+    "dessert"=>"cookies", 
+    "vegetable"=>"asparagus", 
+    "side"=>"mashed potatoes"
+    ];
+
+$rat_foods = [ 
+    "dip"=>"mashed earth worms", 
+    "entree"=>"trash pizza", 
+    "dessert"=>"sugar cubes", 
+    "drink"=>"lemon water"
+    ];
+
+$potluck = $giraffe_foods + $impala_foods; // Will return a new array into $potluck, that has all the keys from $giraffe_foods AND all of the unique keys from $impala_foods.
+print_r($potluck); /* Prints:
+Array
+(
+    [dip] => guacamole
+    [chips] => corn
+    [entree] => grilled chicken
+    [dessert] => cookies
+    [vegetable] => asparagus
+    [side] => mashed potatoes
+)
+*/
+
+$potluck += $rat_foods; // Returns a new array into $potluck, that was the potluck above AND any unique keys from $rat_foods.
+print_r($potluck); /* Prints:
+Array
+(
+    [dip] => guacamole
+    [chips] => corn
+    [entree] => grilled chicken
+    [dessert] => cookies
+    [vegetable] => asparagus
+    [side] => mashed potatoes
+    [drink] => lemon water
+)
+This array only had the "drink"=>"lemon water" key=>value pair added to it. This is because they "dip", "entree" and "dessert" keys already existed in $potluck, and so those keys from $rat_foods were not added.
+*/
+
 
 
   
