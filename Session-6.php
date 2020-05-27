@@ -317,6 +317,88 @@ Array
 This array only had the "drink"=>"lemon water" key=>value pair added to it. This is because they "dip", "entree" and "dessert" keys already existed in $potluck, and so those keys from $rat_foods were not added.
 */
 
+# Assigning by Value or by Reference
 
+$doge_meme = [
+    "top_text" => "Such Python", 
+    "bottom_text" => "Very language. Wow.", 
+    "img" => "very-cute-dog.jpg", 
+    "description" => "An adorable doge looks confused."
+    ];
+
+$bad_meme = [
+    "top_text" => "i don't know", 
+    "bottom_text" => "i can't think of anything", 
+    "img" => "very-fat-cat.jpg", 
+    "description" => "A very fat cat looks happy."
+    ];
+
+# When we assign one variable to another by value, this creates two copies of the same value that they remain seperate entities.
+
+# However, when we assign one variable to another via reference this creates two variable names that both point to the same memory space. Meaning changes in one, change the other.
+
+# When passing arrays into functions, both built-in and those we write, we have to be aware of whether the arrays are being passed by value or reference.
+
+function createMeme($meme) {
+  $meme["top_text"] = "Much PHP";
+  $meme["bottom_text"] = "Very programming. Wow.";
+  return $meme;
+}
+
+print_r(createMeme($doge_meme)); /* Takes the $doge_meme array, makes a copy of it called $meme, which is then passed through the function changing the $top_text and $bottom_text variables. Prints:
+Array
+(
+    [top_text] => Much PHP
+    [bottom_text] => Very programming. Wow.
+    [img] => very-cute-dog.jpg
+    [description] => An adorable doge looks confused.
+)
+*/
+
+print_r($doge_meme); /* Because the $meme array used in createMeme() is a copy of the $doge_meme array, the $doge_meme array remains unchanged. Prints:
+Array
+(
+    [top_text] => Such Python
+    [bottom_text] => Very language. Wow.
+    [img] => very-cute-dog.jpg
+    [description] => An adorable doge looks confused.
+)
+*/
+
+$php_doge = createMeme($doge_meme); // This saves the output of createMeme($doge_meme) in it's own array $php_doge. 
+print_r($php_doge); /* Prints: 
+Array
+(
+    [top_text] => Much PHP
+    [bottom_text] => Very programming. Wow.
+    [img] => very-cute-dog.jpg
+    [description] => An adorable doge looks confused.
+)
+*/
+
+function fixMeme(&$meme) {
+  $meme["top_text"] = "Such Meme";
+  $meme["bottom_text"] = "Very fix. Wow.";
+  return $meme;
+}
+
+print_r($bad_meme); /* Prints:
+Array
+(
+    [top_text] => i don't know
+    [bottom_text] => i can't think of anything
+    [img] => very-fat-cat.jpg
+    [description] => A very fat cat looks happy.
+)
+*/
+fixMeme($bad_meme); // Takes the $bad_meme array, but because they function take the argument by reference, the values in $bad_meme are also changed.
+print_r($bad_meme); /* Prints: 
+(
+    [top_text] => Such Meme
+    [bottom_text] => Very fix. Wow.
+    [img] => very-fat-cat.jpg
+    [description] => A very fat cat looks happy.
+)
+*/
 
   
