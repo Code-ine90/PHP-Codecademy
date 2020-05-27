@@ -6,6 +6,69 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>Learning PHP and HTML</h1>
+    <p>This first paragraph is standard HTML</p>
+    <?php echo '<p>This is inserted using the long syntax.</p>'?> <!-- This line uses the opening and closing PHP tags and echo to add text to the HTML. -->
+    <?="<p>Let's insert some text into our HTML using PHP! This was inserted using the shorthand syntax.</p>";?> <!-- Adding text like this is so common that PHP provides shorthand syntax for doing it. We used it in this line!-->
+    <p>This last paragraph is also standard HTML</p> 
+        
+
+    <!-- Superglobals are automatic global variables which are available in all scopes throughout a script. Some of the superglobals are:
+    $GLOBALS
+    $_SERVER
+    $_GET
+    $_POST
+    $_FILES
+    $_COOKIE
+    $_SESSION
+    $_REQUEST
+    $_ENV 
+
+    We will be looking at three superglobals:
+    $_GET - This contains an associative array of variables passed to the current script using query parameters in the URL.
+
+    $_POST - This contains an associative array of variables passed to the current script using a form submitted using the "POST" method.
+
+    $_REQUEST - This contains the contents of $_GET, $_POST and $_COOKIE
+    -->
+
+    $_REQUEST:
+    <?php print_r($_REQUEST); /* Prints the contents of $_GET and $_POST
+    Array (
+        [get_name] => 123
+        [post_name] => 456
+    ) 
+    */
+    ?>
+
+    <br>
+
+    $_GET:
+    <?php print_r($_GET); /* Prints the contents of the form with the method "get", which are stored in the superglobal $_GET 
+    Array (
+        [get_name] => 123
+    )
+    */
+    ?>
+
+    <br>
+
+    $_POST:
+    <?php print_r($_POST); /* Prints the contents of the form with the method "post", which are stored in the superglobal $_POST 
+    Array (
+        [post_name] => 456
+    )
+    */
+    ?>
+
+    <form method="get">
+    GET Form: <input type="text" name="get_name">
+    <input type="submit" value="Submit GET">
+    </form>
+    <form method="post">
+    POST Form: <input type="text" name="post_name">
+    <input type="submit" value="Submit POST">
+    </form>
+    <a href="Session-8.php">Reset</a>
 </body>
 </html>
