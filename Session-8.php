@@ -78,7 +78,7 @@
     Language:
     <input type="text" name="language"> <!-- The name for this input is set to "language" -->
     <br>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit"> <!-- When the data from the form is submitted, it is stored as an array in $_GET -->
     </form>
     <br>
     <?=print_r($_GET);?> <!-- In this case the array in $_GET is:
@@ -90,6 +90,24 @@
     <p>Your language is: <?=$_GET["language"];?></p> <!-- Takes the value from the [language] key stored in the $_GET array, and outputs it into the page -->
     <p>Your country is: <?=$_GET["country"];?></p> <!-- Takes the value from the [country] key stored in the $_GET array, and outputs it into the page -->
     <a href="index.php">Reset</a>
-    
+
+    <form method="post">
+    Favorite Color:
+    <input type="text" name="color">
+    <br>
+    Favorite Food:
+    <input type="text" name="food">
+    <br>
+    <input type="submit" value="Submit">
+    </form>
+    <br>
+    <p>Best food is: <?=$_POST["food"]?></p> <!-- Much the same as before with the "get" method, we take the value from the [food] key in the $_POST array, and use the short syntax to echo it onto the page. -->
+    <p>Best color is: <?=$_POST["color"]?></p>
+    <a href="index.php">Reset</a>
+
+    <!-- If we wanted to have the users navigate to another page and handle the form input there, we can use the action="" attribute in the forms HTML. For this we specify the URL we want to use. This works for both GET and POST methods. -->
+
+
+
 </body>
 </html>
