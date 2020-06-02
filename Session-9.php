@@ -53,3 +53,36 @@ if (condition) {
 
     )
     */
+
+
+# With if statements, the condition (Or expression) can hold a boolean value like TRUE or FALSE, a variable that is assigned one of those values, or an expression that evaluates to TRUE or FALSE.
+
+# The less than operator (<) will return TRUE if the operand on the left of it is lower than the right operand.
+
+# The less than or equal to operator (<=) is similar, but will return true if the left operand is less than or equal to the right operand.
+
+# The greater than (>) and greater than or equal to (>=) operators function in much the same way, but with the obvious differences.
+
+    function chooseCheckoutLane($item_number) {
+        if ($item_number <= 12) {
+        return "express lane";
+        } else {
+        return "regular lane";
+        }
+    }
+    
+    function canIVote($age) {
+        if ($age >= 18) {
+        return "yes";
+        } else {
+        return "no";
+        }
+    }
+    
+    echo chooseCheckoutLane(12); // Prints: express lane
+    echo "\n";
+    echo chooseCheckoutLane(13); // Prints: regular lane
+    echo "\n";
+    echo canIVote(17); // Prints: no
+    echo "\n";
+    echo canIVote(18); // Prints: yes
