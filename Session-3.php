@@ -151,13 +151,13 @@
     # However many variables can rely on the same piece of data, and this may be stored in a global variable. To access a global variable in a function we have to use the "global" keyword to tell PHP to look in the global scope for the variable instead of just the local scope.
 
     $feed_quantity = 300;
-    function calculateDaysLeft($number, $rate)
+    function calculateDaysLeft2($number, $rate)
     {
     global $feed_quantity;
     $result = $feed_quantity / ($number * $rate);
     return $result;
     }
-    echo calculateDaysLeft(2, 120);
+    echo calculateDaysLeft2(2, 120);
 
     # In this next example we have been asked to change the function so that we can use the global variable $language instead of filling out the function parameters each time with the same information.
 
@@ -173,14 +173,14 @@
 
     # This is what it looks like afterwards.
 
-    function generateLessonName($concept)
+    function generateLessonName2($concept)
     {
     global $language;
     return $language . ": " . $concept;
     }
 
-    echo generateLessonName($topic); // Should print "PHP: scope"
-    echo generateLessonName("parameter"); // Should print "PHP: parameters"
+    echo generateLessonName2($topic); // Should print "PHP: scope"
+    echo generateLessonName2("parameter"); // Should print "PHP: parameters"
 
     
 

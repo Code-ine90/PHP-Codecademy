@@ -81,7 +81,7 @@
     <input type="submit" value="Submit"> <!-- When the data from the form is submitted, it is stored as an array in $_GET -->
     </form>
     <br>
-    <?=print_r($_GET);?> <!-- In this case the array in $_GET is:
+    <?php print_r($_GET);?> <!-- In this case the array in $_GET is:
     Array (
         [country] => UK
         [language] => English
