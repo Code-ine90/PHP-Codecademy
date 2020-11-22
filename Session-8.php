@@ -86,6 +86,8 @@
         [country] => UK
         [language] => English
     )
+
+    If you use the shorthand (?=),  this uses the echo function, and will append 1 on a new line after the array. To remove this I used the longhand declaration for PHP code.
     -->
     <p>Your language is: <?=$_GET["language"];?></p> <!-- Takes the value from the [language] key stored in the $_GET array, and outputs it into the page -->
     <p>Your country is: <?=$_GET["country"];?></p> <!-- Takes the value from the [country] key stored in the $_GET array, and outputs it into the page -->

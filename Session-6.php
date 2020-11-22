@@ -215,7 +215,7 @@ $my_car = [
 
 # Associative arrays can use integers as keys as well as strings.
 
-# With ordered arrays in PHP the numerical key association to values is done automaticalls for us.
+# With ordered arrays in PHP the numerical key association to values is done automatically for us.
 
 # The structure of an ordered array is the same as an associative array.
 

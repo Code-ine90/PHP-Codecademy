@@ -52,6 +52,8 @@ if (condition) {
         )
 
     )
+
+    The 1 after [is_correct] indicates a true value. I think. I looked it up and I was right. A true value is output as 1 and false produces no output.
     */
     markAnswer($learner_one["is_correct"], $learner_one["box"]);
     print_r($learner_one);
