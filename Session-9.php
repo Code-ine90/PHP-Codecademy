@@ -115,6 +115,8 @@ echo "\n";
 
 // You can also use the not identical operator (!==) to similar effect. This will return true if the two operands are different and false if they are the same.
 
+$current_month = date("F");
+
 function checkRenewalMonth($renewalMonth) {
 if ($renewalMonth !== date("F")) {
     return "Welcome!";
@@ -125,10 +127,73 @@ if ($renewalMonth !== date("F")) {
 
 echo checkRenewalMonth("January"); // Prints: "Welcome!"
 echo "\n";
-echo checkRenewalMonth("November"); // Prints: "Time to renew"
+echo checkRenewalMonth($current_month); // Prints: "Time to renew"
 
 // There is also the equal operator (==), this is similar to the identical operator but not as strict. 
 
+// Another type of conditional is the elseif, with this one you can write multiple if statements and the computer will continue through each until it finds a condition that is met or gets to the end of the statements. You can write the statements with (else if) instead of (elseif), but elseif is more universal so I tend to use that.
+
+function whatRelation($matchPercentage) {
+    if ($matchPercentage === 0) {
+      echo "not genetically related";
+    } elseif ($matchPercentage < 3) {
+      echo "third cousins";
+    } elseif ($matchPercentage < 6) {
+      echo "second cousins";
+    } elseif ($matchPercentage < 14) {
+      echo "first cousins";
+    } elseif ($match Percentage < 35) {
+      echo "grandparent and grandchild, aunt/uncle and niece/nephew, or half siblings";
+    } elseif ($matchPercentage < 100) {
+      echo "parent and child or full siblings";
+    } else {
+      echo "identical twins";
+    }
+   }
+   
+   whatRelation(100); // Prints: identical twins
+   echo "\n";
+   whatRelation(0); // Prints: not genetically related
+   echo "\n";
+   whatRelation(54); // Prints: parent and child or full siblings
+
+
+// Instead of using an if/elseif statement with many identical operator (===) comparisons, we can use a switch statement instead. A switch statement compares cases with the input value and executes a block of code if the comparison is true. 
+
+function airQuality($color) {
+    switch ($color){
+      case "green":
+        echo "good";
+        break; // Stops the code and ends the statement.
+      case "yellow":
+        echo "moderate";
+        break;
+      case "orange":
+        echo "unhealthy for sensitive groups";
+        break;
+      case "red":
+        echo "unhealthy";
+        break;
+      case "purple":
+        echo "very unhealthy";
+        break;
+      case "maroon":
+        echo "hazardous";
+        break;
+      default:
+        echo "invalid color";
+    }
+  }
+  
+  // Each case is compared with the input value and the code is executed, at the end of each code block the break ends the switch statement.
+  
+  airQuality("red"); // Prints: "unhealthy"
+  echo "\n";
+  airQuality("blue"); // Prints: "invalid color"
+  echo "\n";
+  airQuality("green"); // Prints: "good"
+  echo "\n";
+  airQuality("maroon"); // Prints: "hazardous"
 
 
 
