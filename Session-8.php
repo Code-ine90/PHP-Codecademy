@@ -81,11 +81,13 @@
     <input type="submit" value="Submit"> <!-- When the data from the form is submitted, it is stored as an array in $_GET -->
     </form>
     <br>
-    <?=print_r($_GET);?> <!-- In this case the array in $_GET is:
+    <?php print_r($_GET);?> <!-- In this case the array in $_GET is:
     Array (
         [country] => UK
         [language] => English
     )
+
+    If you use the shorthand (?=),  this uses the echo function, and will append 1 on a new line after the array. To remove this I used the longhand declaration for PHP code.
     -->
     <p>Your language is: <?=$_GET["language"];?></p> <!-- Takes the value from the [language] key stored in the $_GET array, and outputs it into the page -->
     <p>Your country is: <?=$_GET["country"];?></p> <!-- Takes the value from the [country] key stored in the $_GET array, and outputs it into the page -->
