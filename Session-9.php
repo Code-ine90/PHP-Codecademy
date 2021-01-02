@@ -254,3 +254,28 @@ function airQuality($color) {
   echo "\n";
   echo ternaryVote(21); // Prints: "yes"
 
+// Any value or expression in a condition will be converted to TRUE or FALSE. 
+
+if ("What's going on?") {
+  echo "Let me explain";
+}
+
+echo "\n";
+
+// This block of code checks the 'truthiness' of the value, and converts the value to true. Code that is converted to TRUE is often refered to as 'truthy' and one that equates to FALSE as 'falsy' as they are not actually equivalent to those boolean values but are treated as such in certain contexts. 
+
+// Examples of falsy values are empty strings, null, undefined or undeclared values, an empty array, the number 0 or the string "0".
+
+function truthyOrFalsy($value) {
+  if($value) {
+    return "True";
+  } else {
+    return "False";
+  }
+}
+
+echo truthyOrFalsy("Hello"); //Prints: "True" because it holds a value.
+echo "\n";
+echo truthyOrFalsy(0); // Prints: "False"
+echo "\n";
+echo truthyOrFalsy(null); // Prints: "False"
