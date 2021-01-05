@@ -279,3 +279,18 @@ echo "\n";
 echo truthyOrFalsy(0); // Prints: "False"
 echo "\n";
 echo truthyOrFalsy(null); // Prints: "False"
+
+// The readline() inbuilt function can be used to read user input from the terminal. It takes a string value as a prompt for the user. It then waits for the user to enter text into the terminal, and then returns that value as a string.
+
+echo "Hello, there. What's your first name?\n";
+$name = readline("> "); // Prompts the user with a ">" symbol, and then returns the text input from the user as a string to be stored in the $name variable.
+
+$name_length = strlen($name); // Takes the variable $name and counts the length of the string, which is then saved in the variable $name_length.
+
+if ($name_length > 8) {
+  echo "Hi, ${name}. That's a long name.";
+} elseif ($name_length < 4) {
+  echo "Hi, ${name}. That's a short name.";
+} else {
+  echo "Hi, ${name}.";
+}
